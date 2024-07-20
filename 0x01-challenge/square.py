@@ -1,29 +1,33 @@
 #!/usr/bin/python3
+""" Module for square class"""
 
-class Square:
-    def __init__(self, width=0, height=0):
-        # Initialize the square with width and height
-        self.width = width
-        self.height = height
 
-    def area(self):
-        """Return the area of the square"""
-        if self.width <= 0 or self.height <= 0:
-            return 0
+class Square():
+    """ Square class """
+    width = 0
+    height = 0
+
+    def __init__(self, *args, **kwargs):
+        """Function to inotialize instances"""
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def area_of_my_square(self):
+        """Function to find area"""
         return self.width * self.height
 
-    def perimeter(self):
-        """Return the perimeter of the square"""
-        if self.width <= 0 or self.height <= 0:
-            return 0
-        return 2 * (self.width + self.height)
+    def permiter_of_my_square(self):
+        """Function to find perimeter"""
+        return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
-        # Return the string representation of the square
+        """Print objects in string format"""
         return "{}/{}".format(self.width, self.height)
 
+
 if __name__ == "__main__":
+    """Create a square"""
     s = Square(width=12, height=9)
-    print(s)  # Should output: 12/9
-    print(s.area())  # Should output: 108
-    print(s.perimeter())  # Should output: 42
+    print(s)
+    print(s.area_of_my_square())
+    print(s.permiter_of_my_square())
