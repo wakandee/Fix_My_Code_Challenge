@@ -5,12 +5,16 @@ class Square:
         self.width = width
         self.height = height
 
-    def area_of_my_square(self):
+    def area(self):
         """ Return the area of the square """
+        if self.width <= 0 or self.height <= 0:
+            return 0
         return self.width * self.height
 
-    def perimeter_of_my_square(self):
+    def perimeter(self):
         """ Return the perimeter of the square """
+        if self.width <= 0 or self.height <= 0:
+            return 0
         return 2 * (self.width + self.height)
 
     def __str__(self):
@@ -18,6 +22,6 @@ class Square:
 
 if __name__ == "__main__":
     s = Square(width=12, height=9)
-    print(s)
-    print(s.area_of_my_square())
-    print(s.perimeter_of_my_square())
+    print(s)  # Should output: 12/9
+    print(s.area())  # Should output: 108
+    print(s.perimeter())  # Should output: 42
