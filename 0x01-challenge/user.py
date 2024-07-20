@@ -3,7 +3,7 @@
 User class
 """
 
-class User():
+class User:
     """ Documentation """
 
     def __init__(self):
